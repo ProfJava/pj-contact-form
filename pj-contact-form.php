@@ -1,11 +1,11 @@
 <?php
 /*
     Plugin Name: PJ Contact Form (Beta)
-    Plugin URI: az4it.com/pj-contact-form
+    Plugin URI: https://github.com/ProfJava/pj-contact-form
     Description: Contact Form Plugin.
     Version : 0.1
     Author: Prof
-    Author URI: az4it.com/pj
+    Author URI: https://github.com/ProfJava
     License: GPL2 or later
     Text Domain: pj-contact-form
 */
