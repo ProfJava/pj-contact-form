@@ -89,7 +89,7 @@ function pjcf_new_email()
     $headers[]  = 'MIME-Version: 1.0' . "\r\n";
     $headers[]  = 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
     $headers[]  = "X-Mailer: PHP \r\n";
-    $headers[]  = 'From: ' . $sender . ' <no-reply@example.com>' . "\r\n";
+    $headers[]  = 'From: ' . $sender . ' <'. sanitize_email(get_option('receiver_email')) .'>' . "\r\n";
     if (!is_wp_error($post_id)) {
         $mail = wp_mail($to, $subject, $message, $headers);
     }
@@ -107,6 +107,7 @@ function pjcf_receiver_email() {
 
         if(isset($_POST['receiver_email']) && is_email($_POST['receiver_email'])) {
             update_option('receiver_email',sanitize_email($_POST['receiver_email']));
+            update_option('sender_email',sanitize_email($_POST['sender_email']));
             wp_safe_redirect( admin_url( '/admin.php?page=pj_contact_form' ) );
             exit;
         }

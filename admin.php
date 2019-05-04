@@ -7,10 +7,10 @@ if (!defined('ABSPATH')) {
  * Add CPT Emails Columns
  * ***********************/
 
-add_filter('manage_emails_posts_columns', 'set_custom_edit_email_columns');
-add_action('manage_emails_posts_custom_column', 'custom_email_column', 10, 2);
+add_filter('manage_emails_posts_columns', 'pjcf_set_custom_email_columns');
+add_action('manage_emails_posts_custom_column', 'pjcf_custom_email_column', 10, 2);
 
-function set_custom_edit_email_columns($columns)
+function pjcf_set_custom_email_columns($columns)
 {
     unset($columns['author']);
     $columns['subject'] = __('Subject', 'pjcf');
@@ -19,7 +19,7 @@ function set_custom_edit_email_columns($columns)
     return $columns;
 }
 
-function custom_email_column($column, $post_id)
+function pjcf_custom_email_column($column, $post_id)
 {
     switch ($column) {
         case 'subject' :

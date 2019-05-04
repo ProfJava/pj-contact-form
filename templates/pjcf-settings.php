@@ -15,6 +15,7 @@
                     <?php wp_nonce_field('receiver_email','wp_nonce_check') ?>
                     <input type="hidden" name="action" value="receiver_email_process">
                     <input type="email" name="receiver_email" value="<?php echo esc_attr(get_option('receiver_email')) ?>" class="regular-text">
+                    <input type="email" name="receiver_email" value="<?php echo esc_attr(get_option('sender_email')) ?>" class="regular-text">
                     <button type="submit" class="button button-primary">Save</button>
                 </form>
             </td>
